@@ -5,7 +5,7 @@
 #include "GUI_Paint.h"
 #include "imagedata.h"
 #include <stdlib.h>
-
+//296 × 128 212 x 104
 void setup(){
     Serial.begin(115200);
     DEV_Module_Init();
@@ -14,7 +14,7 @@ void setup(){
     EPD_2IN13D_Clear();
     delay(500);
 
-    //显示图片
+    //显示图片 
     UBYTE *BlackImage;
     UWORD Imagesize = ((EPD_2IN13D_WIDTH % 8 == 0) ? (EPD_2IN13D_WIDTH / 8 ) : (EPD_2IN13D_WIDTH / 8 + 1)) * EPD_2IN13D_HEIGHT;
     if ((BlackImage = (UBYTE *)malloc(Imagesize)) == NULL) {
@@ -26,14 +26,17 @@ void setup(){
     Paint_Clear(WHITE);
 
     //显示汉字
-    Paint_DrawImage(BST_64, 0, 0, 64, 64);
-    //Paint_DrawString_CN(30, 45, "BST", &Font24CN, BLACK, WHITE);
+    Paint_DrawImage(BST_64, 0, 148, 64, 64);
+    Paint_DrawString_CN(44, 40, "蓝色技术工作室", &Font24CN, BLACK, WHITE);
+    //Paint_DrawString_CN(44, 64, "你好", &Font12CN, BLACK, WHITE);
 
     //显示英文字符以及线条
+    Paint_DrawLine(0, 64, 212, 64, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);     //1号大横线
+
     // Paint_DrawLine(6, 10, 6, 20, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
     // Paint_DrawLine(1, 15, 6, 10, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
     // Paint_DrawLine(1, 15, 6, 20, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    // Paint_DrawString_EN(7, 10, "IO05", &Font12, WHITE, BLACK);
+    Paint_DrawString_EN(64, 10, "Alaye-Dong", &Font20, WHITE, BLACK);
 
     // Paint_DrawLine(140, 5, 210, 5, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
     // Paint_DrawString_EN(142, 6, "EDP", &Font12, WHITE, BLACK);//表头
