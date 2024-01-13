@@ -5,7 +5,7 @@
 #include "GUI_Paint.h"
 #include "imagedata.h"
 #include <stdlib.h>
-//296 × 128 212 x 104
+//212 x 104
 void setup(){
     Serial.begin(115200);
     DEV_Module_Init();
@@ -27,52 +27,14 @@ void setup(){
 
     //显示汉字
     Paint_DrawImage(BST_64, 0, 148, 64, 64);
+    Paint_DrawString_CN(88, 0, "软件部", &Font24CN, WHITE, BLACK);
     Paint_DrawString_CN(44, 40, "蓝色技术工作室", &Font24CN, BLACK, WHITE);
     //Paint_DrawString_CN(44, 64, "你好", &Font12CN, BLACK, WHITE);
-
+                                                                                                                                 
     //显示英文字符以及线条
     Paint_DrawLine(0, 64, 212, 64, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);     //1号大横线
+    Paint_DrawString_EN(24, 74, "Alaye-Dong", &Font20, WHITE, BLACK);
 
-    // Paint_DrawLine(6, 10, 6, 20, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    // Paint_DrawLine(1, 15, 6, 10, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    // Paint_DrawLine(1, 15, 6, 20, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    Paint_DrawString_EN(64, 10, "Alaye-Dong", &Font20, WHITE, BLACK);
-
-    // Paint_DrawLine(140, 5, 210, 5, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    // Paint_DrawString_EN(142, 6, "EDP", &Font12, WHITE, BLACK);//表头
-    // Paint_DrawString_EN(175, 6, "ESP12", &Font12, WHITE, BLACK);
-
-
-
-    // Paint_DrawLine(140, 19, 210, 19, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    // Paint_DrawString_EN(142, 20, "MOSI", &Font12, WHITE, BLACK);//mosi
-    // Paint_DrawString_EN(178, 20, "IO13", &Font12, WHITE, BLACK);
-
-    // Paint_DrawLine(140, 33, 210, 33, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    // Paint_DrawString_EN(142, 34, "CLK", &Font12, WHITE, BLACK);//clk
-    // Paint_DrawString_EN(178, 34, "IO14", &Font12, WHITE, BLACK);
-
-    // Paint_DrawLine(140, 47, 210, 47, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    // Paint_DrawString_EN(142, 48, "CS", &Font12, WHITE, BLACK);//cs
-    // Paint_DrawString_EN(178, 48, "IO15", &Font12, WHITE, BLACK);
-
-    // Paint_DrawLine(140, 61, 210, 61, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    // Paint_DrawString_EN(142, 62, "DC", &Font12, WHITE, BLACK);
-    // Paint_DrawString_EN(178, 62, "IO00", &Font12, WHITE, BLACK);
-
-    // Paint_DrawLine(140, 75, 210, 75, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    // Paint_DrawString_EN(142, 76, "RST", &Font12, WHITE, BLACK);
-    // Paint_DrawString_EN(178, 76, "IO02", &Font12, WHITE, BLACK);
-
-    // Paint_DrawLine(140, 89, 210, 89, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    // Paint_DrawString_EN(142, 90, "BUSY", &Font12, WHITE, BLACK);//mosi//busy
-    // Paint_DrawString_EN(178, 90, "IO04", &Font12, WHITE, BLACK);
-
-    // Paint_DrawLine(140, 103, 210, 103, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-
-    // Paint_DrawLine(140, 5, 140, 103, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    // Paint_DrawLine(174, 5, 174, 103, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    // Paint_DrawLine(210, 5, 210, 103, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
 
 
     EPD_2IN13D_Display(BlackImage);
